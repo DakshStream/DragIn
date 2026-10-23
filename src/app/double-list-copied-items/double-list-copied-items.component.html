@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="list-one"
+        cdkDropList
+        #availableList="cdkDropList"
+        [cdkDropListData]="available"
+        [cdkDropListConnectedTo]="[assignedList]"
+        (cdkDropListDropped)="drop($event)">
+
+            <div *ngFor="let item of available" cdkDrag class="avail-list">
+                {{item}}
+            </div>
+
+
+    </div>
+
+    <div class="list-two"
+        cdkDropList
+        #assignedList="cdkDropList"
+        [cdkDropListData]="assigned"
+        [cdkDropListConnectedTo]="[availableList]"
+        (cdkDropListDropped)="drop($event)">
+
+            <div *ngFor="let item of assigned" cdkDrag class="assi-list">
+                {{item}}
+            </div>
+        
+    </div>
+</div>
