@@ -1,3 +1,19 @@
-<div class="drop-list" cdkDropList (cdkDropListDropped)="drop($event)">
-  <div *ngFor="let t of techs" cdkDrag> {{t}} </div>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand-wrap">
+      <div class="brand-mark">D</div>
+      <span class="brand-name">DragIn</span>
+    </div>
+
+    <nav class="nav-bar" aria-label="Main navigation">
+      <button class="nav-btn" routerLink="/single" routerLinkActive="active">Single List</button>
+      <button class="nav-btn" routerLink="/double" routerLinkActive="active">Double List</button>
+    </nav>
+
+    <button class="action-btn">New Task</button>
+  </header>
+
+  <main class="page-content">
+    <router-outlet></router-outlet>
+  </main>
 </div>
