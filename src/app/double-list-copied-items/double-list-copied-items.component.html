@@ -5,9 +5,19 @@
         [cdkDropListData]="available"
         [cdkDropListConnectedTo]="[assignedList]"
         (cdkDropListDropped)="drop($event)">
+        <!--  [cdkDropListDisabled]="true" -->
+        <!--  cdkDropListOrientation="horizontal" -->
+        <!--  -->
+        <!--  -->
 
-            <div *ngFor="let item of available" cdkDrag class="avail-list">
+            <div *ngFor="let item of available" cdkDrag class="avail-list"> 
+                <!-- [cdkDragDisabled]="true"-->
+                <!--  cdkDragLockAxis="x", "y" -->
+                <!--  cdkDragBoundary=".container" -->
+                <!-- cdkDragStarted, ended, moved, released, cdkDropListDropped, entered, exited, sorted -->
                 {{item}}
+                <div *cdkDragPlaceholder>Available List..</div>
+                <div *cdkDragPreview>MOVINGGG</div>
             </div>
 
 
@@ -22,7 +32,11 @@
 
             <div *ngFor="let item of assigned" cdkDrag class="assi-list">
                 {{item}}
+                <div *cdkDragPlaceholder>Assigned List..</div>
             </div>
         
+    </div>
+    <div class="drag-btn" cdkDrag>
+        <button cdkDragHandle>Drag</button>
     </div>
 </div>
